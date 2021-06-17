@@ -6,7 +6,7 @@ void buySell(vector<int>& v, int n) {
     int buy = 0, sell = 0;
     bool flag = 0;
     for (int i = 1; i < n; i++) {
-        if (v[i] >= v[i-1] and v[i] != v[buy]) {
+        if (v[i] > v[i-1]) {
             sell++;
             flag = 1;
         }
