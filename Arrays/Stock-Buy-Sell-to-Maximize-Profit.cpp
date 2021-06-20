@@ -20,7 +20,7 @@ void buySell(vector<int>& v, int n) {
     }
     if (flag == 0) return;
     else if (buy != n-1 and sell == n-1) {
-        cout<<"Buy at: "<<buy<<" and Sell at: "<<sell;
+        cout<<"Buy at: "<<buy<<" and Sell at: "<<sell<<"\n";
     }
     return;
 }
