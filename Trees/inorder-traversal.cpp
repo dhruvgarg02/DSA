@@ -32,7 +32,7 @@ void inorder_recursion(Node* root, vector<int>& res) {
     inorder_recursion(root->right, res);
 }
 
-void inorder_iterative(Node* root) {
+void inorder_iterative(Node* root, vector<int>& res) {
     stack<Node *> s;
     Node *curr = root;
 
@@ -44,7 +44,7 @@ void inorder_iterative(Node* root) {
         }
 
         curr = s.top(); s.pop();
-        cout<<curr->data<<" ";
+        res.push_back(curr->data);
         curr = curr->right;
     }
 }
@@ -64,8 +64,12 @@ int main() {
     inorder_recursion(root, res);
     for (auto i : res) cout<<i<<" ";
     cout<<"\n";
+    res.clear();
 
-    inorder_iterative(root);
+    inorder_iterative(root, res);
+    for (auto i : res) cout<<i<<" ";
+    cout<<"\n";
+    res.clear();
 
     return 0;
 }
