@@ -49,15 +49,14 @@ void preorder_space_saver_iteration(Node *root, vector<int>& res) {
     if (!root) return;
     stack<Node*> s;
 
-    Node* curr = root;
-    while(curr or !s.empty()) {
-        while(curr) {
-            res.push_back(curr->data);
-            if (curr->right) s.push(curr->right);
-            curr = curr->left;
+    while(root or !s.empty()) {
+        while(root) {
+            res.push_back(root->data);
+            if (root->right) s.push(root->right);
+            root = root->left;
         }
         if (!s.empty()) {
-            curr = s.top(); s.pop();
+            root = s.top(); s.pop();
         }
     }
 }
