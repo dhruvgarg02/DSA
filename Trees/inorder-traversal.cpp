@@ -34,18 +34,17 @@ void inorder_recursion(Node* root, vector<int>& res) {
 
 void inorder_iterative(Node* root, vector<int>& res) {
     stack<Node *> s;
-    Node *curr = root;
 
-    while (curr or !s.empty()) {
+    while (root or !s.empty()) {
 
-        while (curr) {
-            s.push(curr);
-            curr = curr->left;
+        while (root) {
+            s.push(root);
+            root = root->left;
         }
 
-        curr = s.top(); s.pop();
-        res.push_back(curr->data);
-        curr = curr->right;
+        root = s.top(); s.pop();
+        res.push_back(root->data);
+        root = root->right;
     }
 }
 
