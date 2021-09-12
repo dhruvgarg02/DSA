@@ -29,7 +29,7 @@ int main() {
     }
     vector<int> res;
     int i = n, j = m;
-    while(i > 0 && j > 0) {
+    while(i > 0 && j > 0) { 
         if (a[i-1] == b[j-1]) {
             res.push_back(a[i-1]);
             i--; j--;
