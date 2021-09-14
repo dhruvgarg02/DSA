@@ -19,15 +19,16 @@ int using_lcs(string &s) {
     return dp.back().back();
 }
 
-// Without lcs_version
+// Without lcs_version (GAP Method)
 int without_lcs(string &s) {
     vector<vector<int>> dp(s.size(), vector<int> (s.size(), 0));
 
     for (int gap = 0; gap < s.size(); gap++) {
         for (int i = 0, j = gap; j < s.size(); i++, j++) {
-            if (gap == 0) dp[i][j] = 1;
-            else if (gap == 1) {
-                dp[i][j] = s[i] == s[j] ? 2 : 1;
+            if (gap == 0) {
+                dp[i][j] = 1;     // Initialization
+            } else if (gap == 1) {
+                dp[i][j] = s[i] == s[j] ? 2 : 1;    // Initialization
             } else {
                 if (s[i] == s[j]) dp[i][j] = 2 + dp[i+1][j-1];
                 else dp[i][j] = max(dp[i+1][j], dp[i][j-1]);
