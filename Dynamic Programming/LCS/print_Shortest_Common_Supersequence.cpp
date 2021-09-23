@@ -25,9 +25,7 @@ int main() {
                 } else {
                     dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
                 }
-                // cout<<dp[i][j]<<" ";
             }
-            // cout<<endl;
         }
 
         string scs = "";

@@ -31,7 +31,7 @@ int main() {
     vector<vector<int>> res;
     vector<int> curr;
 
-    recursion(res, curr, 1, n, k);
+    recursion(res, curr, 1, n, k);a
 
     for (auto i : res) {
         for (auto j : i) {
